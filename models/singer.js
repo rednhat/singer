@@ -30,7 +30,7 @@ class Singer{
         arraySinger.splice(start,1, updateSinger);
     }
 }
-let   arraySinger = [
+const  arraySinger = [
     { _id: 1, name: 'Mr Siro', link: 'Mr-Siro', avatar: 'e/1/1/2/e1120261421cfec7513423222b0ca94c.jpg'},
     { _id: 2, name: 'Hương Tràm', link: 'Huong-Tram', avatar: 'b/f/b/9/bfb9522fe78758e81dfcb4b70d3f8f52.jpg'},
     { _id: 3, name: 'Khắc Việt', link: 'Khac-Viet', avatar: '8/4/84ffbc3c35a04d698f157a129e68d51a_1499686528.jpg'}
@@ -38,8 +38,11 @@ let   arraySinger = [
 // let r = Singer.getSingerById(1);
 // console.log(r);
 
+const profileLink = "https://zingmp3.vn/nghe-si/";
+const avatarLink = 'https://photo-resize-zmp3.zadn.vn/w240_r1x1_jpeg/avatars/';
 
-module.exports = {Singer, arraySinger};
+
+module.exports = {Singer, arraySinger, avatarLink, profileLink };
 
 
 // arraySinger.forEach(singer => console.log(singer));

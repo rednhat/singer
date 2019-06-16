@@ -16,7 +16,7 @@
         <button aria-expanded="false"  class="btn btn-outline-danger" 
         data-toggle="collapse" data-target="#addNew"><h6>Add New Singer</h6></button>
         <div id="addNew" class="collapse">
-            <form method="POST">
+            <form action="/addSinger" method="POST">
                     <div class="form-group">
                             <label for="exampleInputEmail1">id</label>
                             <input type="text" class="form-control" name="_id"  aria-describedby="namelHelp" placeholder="id">
@@ -56,14 +56,12 @@
                 <td><img src="<%- avatarLink + i.avatar %>" alt="avatar"></td>
                 <td><a href="<%= profileLink + i.link %>" target="_blank"><%= i.link%></a></td>
                 <td> 
-                    <form action="./update/<%=i._id%>" target="">
-                        
-                        <button name="update" formmethod="GET" id ="<%=i._id%>" type="submit" class="btn btn-primary">Update</button> </br></br>
-                        
-                    </form>
-                    <form action="./remove/<%=i._id%>" method="POST">
-                            <button name="<%=i._id%>" formmethod="POST" onclick=""  type="submit" class="btn btn-primary">Remove</button>
-                    </form>
+                    <button style="width: 100%" class = "btn btn-warning my-1" >
+                       <a href="/update/<%=i._id%>" target = ""> Update</a>
+                    </button> </br>
+                    <button style="width: 100%" class = "btn btn-warning my-1" onclick = "return confirm('Are you Sure?')">
+                      <a href="/delete/<%=i._id%>"> Delete</a>
+                   </button>
                 </td>
               </tr>
               <%}) %>
